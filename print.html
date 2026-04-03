@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Egerton Uni</title>
+</head>
+<body>
+
+<h1>EGERTON UNI ONLINE APPLICATION FORM</h1>
+
+<form id="applicationForm">
+    
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br><br>
+
+    <label for="phone-no">Phone Number:</label>
+    <input type="tel" id="phone-no" name="phone-no">
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <br><br>
+
+    <label for="d-o-b">Date of Birth:</label>
+    <input type="date" id="d-o-b" name="d-o-b">
+    <br><br>
+
+    <label for="course">Course:</label>
+    <input type="text" id="course" name="course">
+    <br><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+<h2>Submitted Data:</h2>
+<div id="output"></div>
+
+<script>
+document.getElementById('applicationForm').addEventListener('submit', function(e) {
+    e.preventDefault(); 
+    
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone-no').value;
+    const email = document.getElementById('email').value;
+    const dob = document.getElementById('d-o-b').value;
+    const course = document.getElementById('course').value;
+
+    document.getElementById('output').innerHTML = `
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Phone Number:</strong> ${phone}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Date of Birth:</strong> ${dob}</p>
+        <p><strong>Course:</strong> ${course}</p>
+    `;
+});
+</script>
+
+</body>
+</html>
