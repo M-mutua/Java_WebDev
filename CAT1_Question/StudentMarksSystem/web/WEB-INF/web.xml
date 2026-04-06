@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee 
+   https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+   version="5.0">
+    
+    <!-- Display Name -->
+    <display-name>Student Marks System</display-name>
+    
+    <!-- Description -->
+    <description>
+        A web application for managing student course marks using Jakarta EE.
+        Collects course information and marks (coursework and exam) and stores them in a file.
+    </description>
+    
+    <!-- Welcome Files - served when accessing the root path -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    
+    <!-- Note: Servlet mapping is handled by @WebServlet annotation in MarksServlet.java
+        If you want to use XML-based mapping instead, uncomment the section below
+        and remove the @WebServlet annotation from MarksServlet.java
+    
+    <servlet>
+        <servlet-name>MarksServlet</servlet-name>
+        <servlet-class>com.studentmarks.servlet.MarksServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>MarksServlet</servlet-name>
+        <url-pattern>/MarksServlet</url-pattern>
+    </servlet-mapping>
+    
+    -->
+    
+    <!-- Session Configuration -->
+    <session-config>
+        <tracking-mode>COOKIE</tracking-mode>
+        <cookie-config>
+            <secure>false</secure>
+            <http-only>true</http-only>
+        </cookie-config>
+    </session-config>
+    
+</web-app>
